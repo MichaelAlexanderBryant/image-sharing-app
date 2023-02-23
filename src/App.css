@@ -1,0 +1,16 @@
+#nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+ul {
+    list-style: none;
+    display:flex;
+    gap: 20px;
+}
+
+img {
+    width: 320px;
+    height: auto;
+}
