@@ -1,16 +1,20 @@
-function LogIn() {
+import React, {useContext} from 'react';
+import AuthContext from '../context/AuthContext';
+
+function LogIn(props) {
+    let {loginUser} = useContext(AuthContext);
     return (
     <div>
-        <form>
+        <form onSubmit={loginUser}>
             <div>
-                <label>Username</label>
-                <input type="text"></input>
+                <label htmlFor="username">Username</label>
+                <input type="text" name="username"></input>
             </div>
             <div>
-                <label>Password</label>
-                <input type="password"></input>
+                <label htmlFor="password">Password</label>
+                <input type="password" name="password"></input>
             </div>
-            <button>Submit</button>
+            <button type="submit">Submit</button>
         </form>
     </div>)
 }
