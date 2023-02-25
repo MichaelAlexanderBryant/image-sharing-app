@@ -7,10 +7,10 @@ function NavBar() {
     return (
         <div id="nav">
             <h1><a href="/">ImageShare</a></h1>
-            {user ? <p id="logout" onClick={logoutUser}>Log Out</p> :
+            {user ? <div id="logout-btn" onClick={logoutUser}><p id="logout">Log Out</p></div> :
             <ul>
                 <li><a href="/login">Log In</a></li>
-                <li><a href="/signup">Sign Up</a></li>
+                <li><a href="/signup"><div id="signup-btn">Sign Up</div></a></li>
             </ul>}
         </div>
     )

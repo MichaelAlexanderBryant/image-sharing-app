@@ -8,14 +8,12 @@ function LogIn() {
         <h2>Log In</h2>
         <form id="login-form" onSubmit={loginUser}>
             <div id="username-container">
-                <label htmlFor="username">Username</label>
-                <input type="text" name="username"></input>
+                <input type="text" name="username" placeholder='Username'></input>
             </div>
             <div id="password-container">
-                <label htmlFor="password">Password</label>
-                <input type="password" name="password"></input>
+                <input type="password" name="password" placeholder='Password'></input>
             </div>
-            <button type="submit">Submit</button>
+            <button className="login-signup-btn" type="submit">Log In</button>
         </form>
     </div>)
 }

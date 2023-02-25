@@ -30,7 +30,7 @@ function HomePage() {
     return (
         <div id="image-container">
             <div id="image-section">
-                {posts.map(post => {
+                {posts.slice(0).reverse().map(post => {
                     return (
                         <div className="image-card" key={post.title}>
                             <img src={post.image} alt={post.title} />
