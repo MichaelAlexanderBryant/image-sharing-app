@@ -4,8 +4,8 @@ import AuthContext from '../context/AuthContext';
 function LogIn(props) {
     let {loginUser} = useContext(AuthContext);
     return (
-    <div>
-        <form onSubmit={loginUser}>
+    <div id="login-container">
+        <form id="login-form" onSubmit={loginUser}>
             <div>
                 <label htmlFor="username">Username</label>
                 <input type="text" name="username"></input>

@@ -28,16 +28,17 @@ function HomePage() {
     }
 
     return (
-        <div>
-            <p>You are logged into the home page!</p>
+        <div id="image-container">
+            <div id="image-section">
                 {posts.map(post => {
                     return (
-                        <div key={post.title}>
-                            <h2 key={post.title}>{post.title}</h2>
+                        <div className="image-card" key={post.title}>
                             <img src={post.image} alt={post.title} />
+                            <p className="card-text" key={post.title}>{post.title}</p>
                         </div>
                     )
                 })}
+            </div>
         </div>
     )
     }
