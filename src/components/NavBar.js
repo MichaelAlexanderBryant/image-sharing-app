@@ -10,7 +10,7 @@ function NavBar() {
             {user ? <p id="logout" onClick={logoutUser}>Log Out</p> :
             <ul>
                 <li><a href="/login">Log In</a></li>
-                <li>Sign Up</li>
+                <li><a href="/signup">Sign Up</a></li>
             </ul>}
         </div>
     )

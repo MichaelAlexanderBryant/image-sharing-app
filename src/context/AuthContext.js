@@ -35,6 +35,23 @@ export const AuthProvider = ({children}) => {
         };
     }
 
+    let signupUser = async (e) => {
+        e.preventDefault();
+        let response = await fetch('http://127.0.0.1:8000/api/v1/dj-rest-auth/registration/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({'username':e.target.username.value, 'email': e.target.email.value, 'password1':e.target.password1.value, 'password2':e.target.password2.value})
+        });
+        let data = await response.json();
+        if (response.status === 201) {
+            navigate('/login');
+        } else {
+            alert("Something went wrong");
+        };
+    }
+
     let logoutUser = () => {
         setAuthTokens(null);
         setUser(null);
@@ -43,7 +60,6 @@ export const AuthProvider = ({children}) => {
     }
 
     let updateToken = async () => {
-        console.log("Update token called")
         let response = await fetch('http://127.0.0.1:8000/api/v1/token/refresh/', {
             method: 'POST',
             headers: {
@@ -58,7 +74,9 @@ export const AuthProvider = ({children}) => {
             setUser(jwt_decode(data.access));
             localStorage.setItem('authTokens', JSON.stringify(data));
         } else {
-            logoutUser();
+            if (user != null) {
+                logoutUser();
+            }
         }
 
         if (loading) {
@@ -70,6 +88,7 @@ export const AuthProvider = ({children}) => {
         user:user,
         authTokens:authTokens,
         loginUser:loginUser,
+        signupUser:signupUser,
         logoutUser:logoutUser
     }
 

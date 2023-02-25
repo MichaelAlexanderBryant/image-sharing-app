@@ -5,6 +5,7 @@ import {Routes, Route } from 'react-router-dom';
 import LogIn from './pages/LogIn';
 import PrivateRoute from './utils/PrivateRoute';
 import { AuthProvider } from './context/AuthContext'
+import SignUp from './pages/SignUp';
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
                 <Route exact path='/' element={<HomePage/>}/>
               </Route>
             <Route path="/login" exact element={<LogIn/>}/>
+            <Route path="/signup" exact element={<SignUp/>}/>
         </Routes>
       </AuthProvider>
     </div>

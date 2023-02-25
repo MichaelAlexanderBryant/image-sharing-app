@@ -5,6 +5,7 @@
 body {
     margin: 0;
     padding: 0;
+    background-color: #2e3035;
 }
 
 #root{
@@ -37,17 +38,37 @@ ul {
     padding-right: 20px;
 }
 
-#login-container {
-    height: 100vh;
-    background-color: #2e3035;
-}
-
-#login-form {
+#login-container, #signup-container {
     height: 50vh;
+    background-color: #2e3035;
     display:flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    color: white
+}
+
+#login-form, #signup-form {
+    display:flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 30px;
+
+    border-radius: 5px;   
+    background-color: #474a51; 
+    color: white;
+    box-shadow: 0 8px 6px -6px black;
+    
+}
+
+h2 {
+
+}
+
+#username-container, #email-container, #password-container, #password1-container, #password2-container {
+    display:flex;
+    gap: 10px;
+    padding-bottom: 10px;
 }
 
 #logout {
@@ -77,6 +98,7 @@ img {
     border-radius: 5px;   
     background-color: #474a51; 
     color: white;
+    box-shadow: 0 8px 6px -6px black;
 }
 
 .card-text {
