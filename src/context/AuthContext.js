@@ -60,25 +60,6 @@ export const AuthProvider = ({children}) => {
         navigate('/login');
     }
 
-    let createPost = async (e) => {
-        e.preventDefault();
-        let response = await fetch('http://127.0.0.1:8000/api/v1/', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' + String(authTokens.access)
-            },
-            body: JSON.stringify({'author': user.user_id, 'title':e.target.title.value, 'image': e.target.image.value, 'caption': e.target.caption.value})
-        });
-        let data = await response.json();
-        if (response.status === 200) {
-            navigate('/');
-        } else {
-            console.log(JSON.stringify({'author': user.user_id, 'title':e.target.title.value, 'image': e.target.image.value, 'caption': e.target.caption.value}))
-            alert("Something went wrong");
-        };
-    }
-
     let updateToken = async () => {
         let response = await fetch('http://127.0.0.1:8000/api/v1/token/refresh/', {
             method: 'POST',
@@ -110,7 +91,6 @@ export const AuthProvider = ({children}) => {
         loginUser:loginUser,
         signupUser:signupUser,
         logoutUser:logoutUser,
-        createPost: createPost
     }
 
     useEffect(() => {
