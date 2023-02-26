@@ -1,12 +1,29 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
 import AuthContext from '../context/AuthContext';
 
-function NewPost() {
+function EditPost() {
     let {authTokens, user} = useContext(AuthContext);
     const navigate = useNavigate();
 
-    let createPost = async (e) => {
+    let currentUrl = window.location.href
+    let postId = currentUrl.slice(currentUrl.indexOf("editpost/")+12)
+
+    let getPost = async () => {
+        let currentPost = await fetch(`http://127.0.0.1:8000/api/v1/${postId}`, {
+            method: 'GET',
+            headers: {
+                'Authorization': 'Bearer ' + String(authTokens.access)
+            }
+        });
+        return currentPost;
+    }
+
+    useEffect(() => {
+        let postInfo = getPost();
+    }, [])
+
+    let updatePost = async (e) => {
         e.preventDefault();
         const uploadData = new FormData();
         uploadData.append('author',+user.user_id)
@@ -31,8 +48,8 @@ function NewPost() {
 
     return (
     <div id="newpost-container">
-        <h2>New Post</h2>
-        <form id="newpost-form" onSubmit={createPost}>
+        <h2>Edit Post</h2>
+        <form id="newpost-form" onSubmit={updatePost}>
             <div id="image-upload-container">
                 <input type="file" accept="image/png, image/jpeg" name="image"/>
             </div>
@@ -42,9 +59,9 @@ function NewPost() {
             <div id="caption-container">
                 <input type="text" name="caption" placeholder='Caption'></input>
             </div>
-            <button className="login-signup-btn" type="submit">Create Post</button>
+            <button className="login-signup-btn" type="submit">Update Post</button>
         </form>
     </div>)
 }
 
-export default NewPost;
+export default EditPost;

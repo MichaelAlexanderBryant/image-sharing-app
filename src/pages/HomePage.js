@@ -24,7 +24,6 @@ function HomePage() {
         } else if (response.statusText === 'Unauthorized') {
             logoutUser();
         };
-        
     }
 
     return (
@@ -33,7 +32,9 @@ function HomePage() {
                 {posts.slice(0).reverse().map(post => {
                     return (
                         <div className="image-card" key={post.title}>
-                            <img src={post.image} alt={post.title} />
+                            <a href={"/postdetail/"+post.id}>
+                                <img src={post.image} alt={post.title} />
+                            </a>
                             <p className="card-text" key={post.title}>{post.title}</p>
                         </div>
                     )
