@@ -84,6 +84,22 @@ function UserPostDetail() {
         };
     }
 
+    let deletePost = async () => {
+        let response = await fetch(`http://127.0.0.1:8000/api/v1/yourposts/${postId}`, {
+            method: 'DELETE',
+            headers: {
+                'Authorization': 'Bearer ' + String(authTokens.access)
+            }
+        });
+
+
+        if (response.status === 204) {
+            navigate('/yourposts')
+        } else if (response.statusText === 'Unauthorized') {
+            console.log("unauthorized")
+        };
+    }
+
     return (
     <div id="postdetail-container">
         <form className='postdetail-form' onSubmit={updatePost}>
@@ -92,7 +108,9 @@ function UserPostDetail() {
             <input type="file" accept="image/png, image/jpeg" name="image" defaultValue={post.image} onChange={handleChange}/>
             <input type="text" name="caption" defaultValue={post.caption}/>
             <button type="submit" className="login-signup-btn">Update Post</button>
+            <button type="button" className="delete-btn" onClick={deletePost}>Delete</button>
         </form>
+
     </div>)
 }
 
