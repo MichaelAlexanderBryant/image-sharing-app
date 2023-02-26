@@ -44,6 +44,10 @@ body {
     border-radius: 5px;
 }
 
+#add-post:hover {
+    background-color: #1dc275;
+}
+
 a:link, a:visited {
     color: white;
     text-decoration: none;
