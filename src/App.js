@@ -8,6 +8,8 @@ import { AuthProvider } from './context/AuthContext'
 import SignUp from './pages/SignUp';
 import PrivateRouteHomePage from './utils/PrivateRouteHomePage';
 import PrivateRouteLogIn from './utils/PrivateRouteLogIn';
+import PrivateRouteNewPost from './utils/PrivateRouteNewPost';
+import NewPost from './pages/NewPost';
 
 function App() {
 
@@ -24,6 +26,9 @@ function App() {
             </Route>
             <Route exact path='/signup' element={<PrivateRouteSignUp/>}>
               <Route path="/signup" exact element={<SignUp/>}/>
+            </Route>
+            <Route exact path='/newpost' element={<PrivateRouteNewPost/>}>
+              <Route path="/newpost" exact element={<NewPost />}/>
             </Route>
         </Routes>
       </AuthProvider>

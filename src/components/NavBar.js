@@ -6,7 +6,10 @@ function NavBar() {
     let {user, logoutUser} = useContext(AuthContext)
     return (
         <div id="nav">
-            <h1><a href="/">ImageShare</a></h1>
+            <div id="left-nav">
+                <h1><a href="/">ImageShare</a></h1>
+                {user ? <a href="/newpost"><div id="add-post">+ New Post</div></a> : null}
+            </div>
             {user ? <div id="logout-btn" onClick={logoutUser}><p id="logout">Log Out</p></div> :
             <ul>
                 <li><a href="/login">Log In</a></li>

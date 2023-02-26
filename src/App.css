@@ -19,7 +19,21 @@ body {
     background: rgb(23,21,68);
     background: linear-gradient(90deg, rgba(23,21,68,1) 0%, rgba(45,31,93,1) 100%);
     color: white;
-    
+    position: fixed;
+    width: 100%;
+}
+
+#left-nav {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+#add-post {
+    padding: 12px 30px;
+    margin-right: 20px;
+    background-color: #1bb76e;
+    border-radius: 5px;
 }
 
 a:link, a:visited {
@@ -42,7 +56,8 @@ ul {
 
 
 
-#login-container, #signup-container {
+#login-container, #signup-container, #newpost-container {
+    padding-top: 90px;
     height: 50vh;
     background-color: #2e3035;
     display:flex;
@@ -52,7 +67,7 @@ ul {
     color: white
 }
 
-#login-form, #signup-form {
+#login-form, #signup-form, #newpost-form {
     display:flex;
     flex-direction: column;
     align-items: center;
@@ -62,10 +77,10 @@ ul {
     background-color: #474a51; 
     color: white;
     box-shadow: 0 8px 6px -6px black;
-    
 }
 
-#username-container, #email-container, #password-container, #password1-container, #password2-container {
+#username-container, #email-container, #password-container, #password1-container, #password2-container,
+#title-container, #image-upload-container, #caption-container {
     display:flex;
     gap: 10px;
     padding-bottom: 10px;
@@ -83,7 +98,7 @@ ul {
 }
 
 #signup-btn {
-    padding: 15px 30px;
+    padding: 12px 30px;
     margin-right: 20px;
     background-color: #1bb76e;
     border-radius: 5px;
@@ -99,6 +114,7 @@ img {
 }
 
 #image-container {
+    padding-top: 90px;
     height: 100vh;
     background-color: #2e3035;
 }
