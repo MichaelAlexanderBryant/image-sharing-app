@@ -33,9 +33,11 @@ function HomePage() {
                     return (
                         <div className="image-card" key={post.title}>
                             <a href={"/postdetail/"+post.id}>
-                                <img src={post.image} alt={post.title} />
+                                <img className="homepage-img" src={post.image} alt={post.title} />
                             </a>
-                            <p className="card-text" key={post.title}>{post.title}</p>
+                            <div className="text-area">
+                                <p className="card-text" key={post.title}>{post.title}</p>
+                            </div>
                         </div>
                     )
                 })}

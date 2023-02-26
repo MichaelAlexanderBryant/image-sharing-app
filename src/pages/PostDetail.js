@@ -33,11 +33,8 @@ function PostDetail() {
 
     return (
     <div id="postdetail-container">
-        <div id="postdetail">
-            <img src={post.image} alt={post.title}/>
-            <h2>{post.title}</h2>
-            <p>{post.caption}</p>
-        </div>
+        <h2>{post.title}</h2>
+        <img src={post.image} alt={post.title}/>
     </div>)
 }
 

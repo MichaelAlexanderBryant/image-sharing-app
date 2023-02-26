@@ -10,7 +10,7 @@ body {
 }
 
 #root{
-    height: 100vh;
+    /* height: 100vh; */
 }
 
 #nav {
@@ -28,6 +28,12 @@ body {
     display: flex;
     align-items: center;
     gap: 50px;
+}
+
+#right-nav {
+    display:flex;
+    align-items: center;
+    gap: 40px;
 }
 
 #add-post {
@@ -98,10 +104,6 @@ ul {
     padding: 10px 30px;
 }
 
-#logout {
-    
-}
-
 #signup-btn {
     padding: 12px 30px;
     margin-right: 20px;
@@ -113,35 +115,41 @@ ul {
     padding-right:20px;
 }
 
-img {
-    height: 320px;
-    width: auto;
-}
-
 #image-container {
     padding-top: 90px;
-    height: 100vh;
     background-color: #2e3035;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+
 }
 
-#image-section {
-    display:flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    padding: 20px;
-    justify-content: center;    
+#image-section {            
+    column-count: 5;
+    column-gap: 15px;
+    width: 100%;
 }
 
 .image-card {
-    padding-bottom: 20px;
     border-radius: 5px;   
     background-color: #474a51; 
     color: white;
     box-shadow: 0 8px 6px -6px black;
+    width: 350px;
+    page-break-inside: avoid;
+}
+
+.homepage-img {
+    height: auto;
+    width: 350px;
+}
+
+.text-area {
+
 }
 
 .card-text {
-    padding: 0px 20px
+    padding: 0px 20px;
 }
 
 form {

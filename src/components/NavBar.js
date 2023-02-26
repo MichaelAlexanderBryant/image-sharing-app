@@ -10,7 +10,12 @@ function NavBar() {
                 <h1><a href="/">ImageShare</a></h1>
                 {user ? <a href="/newpost"><div id="add-post">+ New Post</div></a> : null}
             </div>
-            {user ? <div id="logout-btn" onClick={logoutUser}><p id="logout">Log Out</p></div> :
+            {user ? 
+            <div id="right-nav">
+                <div id="username">{user.username}</div>
+                <div id="logout-btn" onClick={logoutUser}><p id="logout">Log Out</p></div>
+            </div>
+            :
             <ul>
                 <li><a href="/login">Log In</a></li>
                 <li><a href="/signup"><div id="signup-btn">Sign Up</div></a></li>

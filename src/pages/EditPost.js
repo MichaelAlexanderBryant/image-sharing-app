@@ -20,7 +20,7 @@ function EditPost() {
     }
 
     useEffect(() => {
-        let postInfo = getPost();
+        getPost();
     }, [])
 
     let updatePost = async (e) => {
