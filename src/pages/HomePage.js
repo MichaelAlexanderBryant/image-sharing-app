@@ -31,14 +31,16 @@ function HomePage() {
             <div id="image-section">
                 {posts.slice(0).reverse().map(post => {
                     return (
-                        <div className="image-card" key={post.title}>
-                            <a href={"/postdetail/"+post.id}>
-                                <img className="homepage-img" src={post.image} alt={post.title} />
-                            </a>
-                            <div className="text-area">
-                                <p className="card-text" key={post.title}>{post.title}</p>
+                        <a href={"/postdetail/"+post.id}>
+                            <div className="white-background">
+                                <div className="image-card" key={post.title}>
+                                    <img className="homepage-img" src={post.image} alt={post.title} />
+                                    <div className="text-area">
+                                        <p className="card-text" key={post.title}>{post.title}</p>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     )
                 })}
             </div>
