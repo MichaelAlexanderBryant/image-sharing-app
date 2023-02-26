@@ -12,7 +12,7 @@ function NavBar() {
             </div>
             {user ? 
             <div id="right-nav">
-                <div id="username">Posts</div>
+                <a href="/yourposts"><div id="your-posts">Your Posts</div></a>
                 <div id="logout-btn" onClick={logoutUser}><p id="logout">Log Out</p></div>
             </div>
             :

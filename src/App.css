@@ -53,6 +53,10 @@ h1 {
     padding-left: 20px;
 }
 
+h2 {
+    color: white;
+}
+
 
 ul {
     list-style: none;
@@ -136,11 +140,12 @@ ul {
     column-count: 5;
     column-gap: 15px;
     width: 100%;
+    padding-bottom: 15px;
 }
 
 .white-background, .image-card {
     color: white;
-    width: 350px;
+    width: 300px;
     page-break-inside: avoid;
     margin-bottom: 15px;
 }
@@ -148,8 +153,6 @@ ul {
 .image-card {
     background-color: #474a51; 
     box-shadow: 0 8px 6px -6px black;
-    overflow: hidden;
-    
 }
 
 .white-background {
@@ -158,7 +161,7 @@ ul {
 
 .homepage-img {
     height: auto;
-    width: 350px;
+    width: 300px;
 }
 
 .card-text {
@@ -171,4 +174,10 @@ ul {
 
 form {
     color: white;
+}
+
+.postdetail-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }

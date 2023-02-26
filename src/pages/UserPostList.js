@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import AuthContext from "../context/AuthContext";
 
-function HomePage() {
+function UserPostList() {
     let [posts, setPosts] = useState([]);
     let {authTokens, logoutUser} = useContext(AuthContext);
 
@@ -10,7 +10,7 @@ function HomePage() {
     },[])
 
     let getPosts = async () => {
-        let response = await fetch('http://127.0.0.1:8000/api/v1/', {
+        let response = await fetch('http://127.0.0.1:8000/api/v1/yourposts/', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -28,10 +28,11 @@ function HomePage() {
 
     return (
         <div id="image-container">
+            <h2>Your Posts</h2>
             <div id="image-section">
                 {posts.slice(0).reverse().map(post => {
                     return (
-                        <a href={"/postdetail/"+post.id} key={post.title + post.id}>
+                        <a href={"/yourposts/"+post.id} key={post.title}>
                             <div className="white-background">
                                 <div className="image-card" key={post.title}>
                                     <img className="homepage-img" src={post.image} alt={post.title} />
@@ -48,4 +49,4 @@ function HomePage() {
     )
     }
 
-export default HomePage;
+export default UserPostList;

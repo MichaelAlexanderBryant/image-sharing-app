@@ -12,6 +12,8 @@ import PrivateRouteNewPost from './utils/PrivateRouteNewPost';
 import NewPost from './pages/NewPost';
 import EditPost from './pages/EditPost';
 import PostDetail from './pages/PostDetail';
+import UserPostList from './pages/UserPostList';
+import UserPostDetail from './pages/UserPostDetail';
 
 function App() {
 
@@ -33,6 +35,8 @@ function App() {
               <Route path="/newpost" exact element={<NewPost />}/>
             </Route>
             <Route path="/postdetail/:id" element={<PostDetail />} />
+            <Route path="/yourposts" element={<UserPostList />} />
+            <Route path="/yourposts/:id" element={<UserPostDetail />} />
         </Routes>
       </AuthProvider>
     </div>
