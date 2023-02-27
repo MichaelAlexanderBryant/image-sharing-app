@@ -32,16 +32,16 @@ function UserPostList() {
             <div id="image-section">
                 {posts.slice(0).reverse().map(post => {
                     return (
-                        <a href={"/yourposts/"+post.id} key={post.title}>
-                            <div className="white-background">
+                        <div className="white-background">
+                            <a href={"/yourposts/"+post.id} key={post.title}>
                                 <div className="image-card" key={post.title}>
                                     <img className="homepage-img" src={post.image} alt={post.title} />
                                     <div className="text-area">
                                         <p className="card-text" key={post.title}>{post.title}</p>
                                     </div>
                                 </div>
-                            </div>
-                        </a>
+                            </a>
+                        </div> 
                     )
                 })}
             </div>
