@@ -91,21 +91,23 @@ function PostDetail() {
     return (
         <div id="postdetail-container" key={postId}>
             <h2>{post.title}</h2>
-            <img className="img-detail" src={post.image} alt={post.title}/>
+            <div className="img-container"><img className="img-detail" src={post.image} alt={post.title}/></div>
             <div className="comments">
-                <form key={postId + " form"} onSubmit={postComment}>
-                        <textarea rows="4" cols="50" name='comment'></textarea>
-                        <button type="submit">Post</button>
-                    </form>
-                    <h3 id="comment-count">{comments.length + (comments.length === 1 ? " comment" : " comments")}</h3>
-                    {comments.map((comment, idx) => {
-                        return (
-                        <div className="comment" key={comment.author + comment.post + idx}>
-                            <h4 key={comment.author}>{comment.author}</h4>
-                            <p key={comment.comment}>{comment.comment}</p>
-                            {user.username === comment.author ? <span id={comment.id} onClick={deleteComment}>Delete</span> : null}
-                        </div>)
-                    })}
+                <form className="comment-form" key={postId + " form"} onSubmit={postComment}>
+                        <textarea name='comment' placeholder='Write a comment'></textarea>
+                        <div className="comment-btn-container">
+                            <button className="post-comment-btn" type="submit">Post</button>
+                        </div>
+                </form>
+                <h3 id="comment-count">{comments.length + (comments.length === 1 ? " comment" : " comments")}</h3>
+                {comments.map((comment, idx) => {
+                    return (
+                    <div className="comment" key={comment.author + comment.post + idx}>
+                        <h4 key={comment.author}>{comment.author}</h4>
+                        <p key={comment.comment}>{comment.comment}</p>
+                        {user.username === comment.author ? <span id={comment.id} onClick={deleteComment}>Delete</span> : null}
+                    </div>)
+                })}
             </div>
         </div>
         )
