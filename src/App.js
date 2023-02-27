@@ -14,6 +14,9 @@ import EditPost from './pages/EditPost';
 import PostDetail from './pages/PostDetail';
 import UserPostList from './pages/UserPostList';
 import UserPostDetail from './pages/UserPostDetail';
+import PrivateRoutePostDetail from './utils/PrivateRoutePostDetail';
+import PrivateRouteYourPosts from './utils/PrivateRouteYourPosts';
+import PrivateRouteYourPostDetail from './utils/PrivateRouteYourPostDetail';
 
 function App() {
 
@@ -34,9 +37,15 @@ function App() {
             <Route exact path='/newpost' element={<PrivateRouteNewPost/>}>
               <Route path="/newpost" exact element={<NewPost />}/>
             </Route>
-            <Route path="/postdetail/:id" element={<PostDetail />} />
-            <Route path="/yourposts" element={<UserPostList />} />
-            <Route path="/yourposts/:id" element={<UserPostDetail />} />
+            <Route exact path='/postdetail/:id' element={<PrivateRoutePostDetail />}>
+              <Route path="/postdetail/:id" element={<PostDetail />} />
+            </Route>
+            <Route exact path='/yourposts' element={<PrivateRouteYourPosts/>}>
+              <Route path="/yourposts" element={<UserPostList />} />
+            </Route>
+            <Route exact path='/yourposts/:id' element={<PrivateRouteYourPostDetail />}>
+              <Route path="/yourposts/:id" element={<UserPostDetail />} />
+            </Route>
         </Routes>
       </AuthProvider>
     </div>

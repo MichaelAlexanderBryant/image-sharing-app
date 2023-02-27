@@ -30,8 +30,8 @@ function UserPostDetail() {
 
         if (response.status === 200) {
             setPost(data)
-        } else if (response.statusText === 'Unauthorized') {
-            console.log("unauthorized")
+        } else if (response.status === 404) {
+            navigate('/yourposts')
         };
     }
 
@@ -91,8 +91,6 @@ function UserPostDetail() {
                 'Authorization': 'Bearer ' + String(authTokens.access)
             }
         });
-
-
         if (response.status === 204) {
             navigate('/yourposts')
         } else if (response.statusText === 'Unauthorized') {
