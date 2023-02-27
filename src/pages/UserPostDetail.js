@@ -54,7 +54,7 @@ function UserPostDetail() {
         
         let getUploadData = async() => {
             uploadData = new FormData();
-            uploadData.append('author',+user.user_id)
+            uploadData.append('author',user.username)
             uploadData.append('title',e.target.title.value)
             if (e.target.image.files[0]) {
                 uploadData.append('image', e.target.image.files[0], e.target.image.files[0].name)
@@ -99,16 +99,19 @@ function UserPostDetail() {
     }
 
     return (
-    <div id="postdetail-container">
-        <form className='postdetail-form' onSubmit={updatePost}>
-            <input type="text" name="title" defaultValue={post.title}></input>
-            <img className="img-detail" src={imagePreview ? imagePreview:post.image} alt={post.title}/>
-            <input type="file" accept="image/png, image/jpeg" name="image" defaultValue={post.image} onChange={handleChange}/>
-            <input type="text" name="caption" defaultValue={post.caption}/>
-            <button type="submit" className="login-signup-btn">Update Post</button>
-            <button type="button" className="delete-btn" onClick={deletePost}>Delete</button>
-        </form>
-
+    <div id="userpostdetail-background">
+        <div id="userpostdetail-container">
+            <div className="img-userdetail-container">
+                <img className="img-detail img-userdetail" src={imagePreview ? imagePreview:post.image} alt={post.title}/>
+            </div>
+            <form className='userpostdetail-form' onSubmit={updatePost}>
+                <input type="text" name="title" defaultValue={post.title}></input>
+                <input type="file" accept="image/png, image/jpeg" name="image" defaultValue={post.image} onChange={handleChange}/>
+                <input type="text" name="caption" defaultValue={post.caption}/>
+                <button type="submit" className="update-btn">Update post</button>
+                <button type="button" className="delete-btn" onClick={deletePost}>Delete post</button>
+            </form>
+        </div>
     </div>)
 }
 

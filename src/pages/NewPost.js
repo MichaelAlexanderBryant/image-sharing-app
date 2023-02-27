@@ -9,7 +9,7 @@ function NewPost() {
     let createPost = async (e) => {
         e.preventDefault();
         const uploadData = new FormData();
-        uploadData.append('author',+user.user_id)
+        uploadData.append('author',user.username)
         uploadData.append('title',e.target.title.value)
         uploadData.append('image', e.target.image.files[0], e.target.image.files[0].name)
         uploadData.append('caption', e.target.caption.value)

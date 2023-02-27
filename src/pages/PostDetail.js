@@ -90,7 +90,11 @@ function PostDetail() {
 
     return (
         <div id="postdetail-container" key={postId}>
-            <h2>{post.title}</h2>
+            <div className="post-header">
+                <h2 id="post-title">{post.title}</h2>
+                <h4 id="post-author">{post.author}</h4>
+            </div>
+            
             <div className="img-container"><img className="img-detail" src={post.image} alt={post.title}/></div>
             <div className="comments">
                 <form className="comment-form" key={postId + " form"} onSubmit={postComment}>
@@ -103,9 +107,12 @@ function PostDetail() {
                 {comments.map((comment, idx) => {
                     return (
                     <div className="comment" key={comment.author + comment.post + idx}>
+                        <div className="author-delete-comment">
                         <h4 key={comment.author}>{comment.author}</h4>
+                        {user.username === comment.author ? <span className="red-delete" id={comment.id} onClick={deleteComment}>Delete</span> : null}
+                        </div>
                         <p key={comment.comment}>{comment.comment}</p>
-                        {user.username === comment.author ? <span id={comment.id} onClick={deleteComment}>Delete</span> : null}
+                        
                     </div>)
                 })}
             </div>

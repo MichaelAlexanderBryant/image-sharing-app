@@ -47,20 +47,22 @@ function EditPost() {
     }
 
     return (
-    <div id="newpost-container">
-        <h2>Edit Post</h2>
-        <form id="newpost-form" onSubmit={updatePost}>
-            <div id="image-upload-container">
-                <input type="file" accept="image/png, image/jpeg" name="image"/>
-            </div>
-            <div id="title-container">
-                <input type="text" name="title" placeholder='Title'></input>
-            </div>
-            <div id="caption-container">
-                <input type="text" name="caption" placeholder='Caption'></input>
-            </div>
-            <button className="login-signup-btn" type="submit">Update Post</button>
-        </form>
+    <div id="editpost-background">
+        <div id="editpost-container">
+            <h2>Edit Post</h2>
+            <form id="editpost-form" onSubmit={updatePost}>
+                <div id="image-upload-container">
+                    <input type="file" accept="image/png, image/jpeg" name="image"/>
+                </div>
+                <div id="title-container">
+                    <input type="text" name="title" placeholder='Title'></input>
+                </div>
+                <div id="caption-container">
+                    <input type="text" name="caption" placeholder='Caption'></input>
+                </div>
+                <button className="login-signup-btn" type="submit">Update Post</button>
+            </form>
+        </div>
     </div>)
 }
 

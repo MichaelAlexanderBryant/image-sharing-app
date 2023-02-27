@@ -70,16 +70,16 @@ ul {
     padding-right: 20px;
 }
 
-#login-background, #signup-background, #newpost-background {
+#login-background, #signup-background, #newpost-background, #editpost-background, #userpostdetail-background {
     background-color: #141518;
     height: 100vh;
 }
 
-#login-form, #signup-form, #newpost-form {
+#login-form, #signup-form, #newpost-form, #editpost-form, .userpostdetail-form {
     background-color: #2c2f34;
 }
 
-#login-form input, #signup-form input, #newpost-form input {
+#login-form input, #signup-form input, #newpost-form input, #editpost-form input, .userpostdetail-form input{
     background-color: #191919;
     border: none;
     height: 30px;
@@ -89,11 +89,12 @@ ul {
     padding: 0px 10px;
 }
 
-#login-form input::placeholder, #signup-form input::placeholder, #newpost-form input::placeholder {
+#login-form input::placeholder, #signup-form input::placeholder, #newpost-form input::placeholder, #editpost-form input::placeholder,
+.userpostdetail-form input::placeholder {
     color: #434343;
 }
 
-#login-container, #signup-container, #newpost-container, #postdetail-container {
+#login-container, #signup-container, #newpost-container, #postdetail-container, #editpost-container{
     padding-top: 90px;
     height: 50vh;
     /* background-color: #2e3035; */
@@ -110,7 +111,15 @@ ul {
    justify-content: space-between;
    align-items: center;
    gap: 30px;
+}
 
+#userpostdetail-container {
+    display: flex;
+    direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-top: 200px;
+    gap: 50px;
 }
 
 .img-container {
@@ -121,11 +130,22 @@ ul {
 
 }
 
+.img-userdetail-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:500px;
+}
+
+.img-userdetail {
+    max-height: 350px;
+}
+
 .img-detail {
     max-width: 750px;
 }
 
-#login-form, #signup-form, #newpost-form, #postdetail {
+#login-form, #signup-form, #newpost-form, #postdetail, #editpost-form, .userpostdetail-form{
     display:flex;
     flex-direction: column;
     align-items: center;
@@ -151,11 +171,22 @@ ul {
     padding: 10px 30px;
 }
 
+.update-btn {
+    color: white;
+    background-color: #5c69ff;
+    border: none;
+    padding: 12px 30px;
+    width: 180px;
+    border-radius: 5px;
+}
+
 .delete-btn {
     color: white;
     background-color: #cb4343;
     border: none;
-    padding: 10px 30px;
+    padding: 12px 30px;
+    width: 180px;
+    border-radius: 5px;
 }
 
 #signup-btn {
@@ -214,11 +245,19 @@ ul {
     opacity: .90;
 }
 
+.post-header {
+    display: flex;
+    flex-direction: column;
+    width: 750px;
+    align-items:flex-start;
+    height: 100px;
+}
+
 form {
     color: white;
 }
 
-.postdetail-form {
+.postdetail-form, .userpostdetail-form {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -226,6 +265,7 @@ form {
 
 .comments {
    width: 750px;
+   padding-bottom: 100px;
 }
 
 .comment-form {
@@ -267,6 +307,7 @@ textarea::placeholder {
 #comment-count {
     border-bottom: 1px solid #b5b7ba;
     color: #b5b7ba;
+    padding-bottom: 10px;
 }
 
 
@@ -279,4 +320,21 @@ textarea::placeholder {
 
 h4 {
     color: #069e5f;
+}
+
+.author-delete-comment {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0px;
+    padding: 0px;
+    height: 10px;
+}
+
+.red-delete {
+    color: #cb4343;
+}
+
+#post-title, #post-author {
+    margin-bottom: 0px;
 }
