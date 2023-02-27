@@ -196,3 +196,15 @@ form {
 .card-link {
    
 }
+
+textarea {
+    resize: none;
+}
+
+#comment-count {
+    border-bottom: 1px solid white;
+}
+
+.comment {
+    border-bottom: 1px solid white;
+}

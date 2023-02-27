@@ -28,7 +28,7 @@ function UserPostList() {
 
     return (
         <div id="image-container">
-            <h2>Your Posts</h2>
+            {posts.length > 0 ? <h2>Your Posts</h2> : <h2>You have no posts to display.</h2> }
             <div id="image-section">
                 {posts.slice(0).reverse().map(post => {
                     return (
