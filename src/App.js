@@ -10,7 +10,6 @@ import PrivateRouteHomePage from './utils/PrivateRouteHomePage';
 import PrivateRouteLogIn from './utils/PrivateRouteLogIn';
 import PrivateRouteNewPost from './utils/PrivateRouteNewPost';
 import NewPost from './pages/NewPost';
-import EditPost from './pages/EditPost';
 import PostDetail from './pages/PostDetail';
 import UserPostList from './pages/UserPostList';
 import UserPostDetail from './pages/UserPostDetail';
